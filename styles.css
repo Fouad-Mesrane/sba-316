@@ -5,19 +5,17 @@
 body {
   height: 100vh;
   background-color: hsl(202, 86%, 94%);
- 
 }
 
 h1 {
-    color: hsl(202, 55%, 16%);
-    font-weight: bold;
+  color: hsl(202, 55%, 16%);
+  font-weight: bold;
 }
 
 .input-label {
-   color: hsl(202, 12%, 43%);
-   font-size: .8em;
-   margin-block: 8px;
-    
+  color: hsl(202, 12%, 43%);
+  font-size: 0.8em;
+  margin-block: 8px;
 }
 .calcs-section {
   background-color: #fff;
@@ -80,17 +78,17 @@ h1 {
 }
 
 .results p {
-    font-size: .8em;
-    margin-bottom: 1.5em;
+  font-size: 0.8em;
+  margin-bottom: 1.5em;
 }
 .results-dash img {
-    width: 130px;
+  width: 130px;
 }
 
 .amount-result-card {
-    background-color: hsl(202, 56%, 12%);
-    padding: 10px 20px;
-    border-radius: 3px;
+  background-color: hsl(202, 56%, 12%);
+  padding: 10px 20px;
+  border-radius: 3px;
 }
 .border-card {
   border: 2px solid hsl(61, 70%, 52%);
@@ -99,16 +97,16 @@ h1 {
 }
 
 .card-body h6 {
-    font-size: .7em;
-    color: hsl(203, 41%, 72%);
-} 
+  font-size: 0.7em;
+  color: hsl(203, 41%, 72%);
+}
 .card-body h2 {
-    color: hsl(61, 70%, 52%) ;
-    font-size: 1.8em;
-    font-weight: bold;
+  color: hsl(61, 70%, 52%);
+  font-size: 1.8em;
+  font-weight: bold;
 }
 
 #total-rep-amount {
-    font-size: .7em;
-    font-weight: bold;
+  font-size: 0.7em;
+  font-weight: bold;
 }
