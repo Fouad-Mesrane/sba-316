@@ -13,63 +13,106 @@
     <title>Mortgage Calculator</title>
   </head>
   <body class="d-flex align-items-center">
-    <div class="container border">
+    <div class="container">
       <!-- calculation part -->
-      <div class="row">
-        <div class="col">
-          <div class="d-flex">
-            <h1>Hi There</h1>
-            <button class="btn">Clear All</button>
+      <div class="row calcs-section">
+        <div class="col p-3">
+          <div class="d-flex align-items-center justify-content-between my-2">
+            <h1 class="fs-5">Mortgage Calculator</h1>
+            <button class="btn clear-btn fw-bold">Clear All</button>
           </div>
           <form id="form" action="#">
             <label for="mortgage-amount" class="form-label"
               >Mortgage Amount</label
             >
             <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">$</span> 
-                </div>
-                <input type="text" class="form-control" placeholder="Enter amount">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter amount"
+              />
             </div>
-            
+
+            <!--  -->
+
             <div class="row">
-                <div class="col">
-                    <label for="mortgage-term" class="form-label"
-              >Mortgage Term</label
-            >
-            <input class="form-control" type="text" id="mortgage-term" />
+              <div class="col-md-6">
+                <label>Mortgage Term</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" value="25" />
+                  <div class="input-group-append">
+                    <span class="input-group-text">years</span>
+                  </div>
                 </div>
-                <div class="col">
-                    <label for="mortgage-rate" class="form-label"
-              >Mortgage Rate</label
-            >
-            <input class="form-control" type="text" id="mortgage-rate" />
+              </div>
+              <div class="col-md-6">
+                <label>Interest Rate</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" value="5.25" />
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
                 </div>
+              </div>
             </div>
+
+            <!-- payment type -->
+
+            <!-- Option 1 -->
+            <div class="custom-radio-container">
+              <input type="radio" id="repayment" name="mortgage-type" checked />
+              <label for="repayment">Repayment</label>
+            </div>
+
+            <!-- Option 2 -->
+            <div class="custom-radio-container">
+              <input type="radio" id="interest" name="mortgage-type" />
+              <label for="interest">Interest Only</label>
+            </div>
+
+            <!-- button to calculate -->
+
+            <button class="repayments-btn">
+              <div class="d-flex gap-2 align-items-center px-3 m-1">
+                <img src="./images/icon-calculator.svg" alt="calculator icon" />
+                <span>Calculate Repayments</span>
+              </div>
+            </button>
           </form>
         </div>
 
         <!-- Results section -->
-        <div class="results col">
-          <div class="results-dash d-none">
+        <div
+          class="results col p-3 d-flex justify-content-center align-items-center"
+        >
+          <div
+            class="results-dash text-light px-3 d-flex flex-column align-items-center"
+          >
             <img src="./images/illustration-empty.svg" alt="" srcset="" />
-            <h2>Results shown here</h2>
+            <h2 class="fs-5 fw-bold">Results shown here</h2>
+            <p class="text-center">
+              Complete the for and click "calculate repayments" to see what your
+              monthly repayments would be.
+            </p>
           </div>
-          <div class="results">
-            <h2>Your results</h2>
-            <p>
+          <div class="results text-light px-3 d-none">
+            <h2 class="fs-5 fw-bold">Your results</h2>
+            <p class="">
               Your results are shown below based on the information you
               provided. To adjust the results, edit the form and click
               “calculate repayments” again.
             </p>
-            <div class="amount-result">
-              <div class="border"></div>
-              <div>
+            <div class="border-card"></div>
+            <div class="amount-result-card">
+              <div class="card-body">
                 <h6>Your monthly repayments</h6>
-                <h2>$ <span id="repayment-amount">1,898.75</span></h2>
+                <h2>$<span id="repayment-amount">1,898.75</span></h2>
                 <hr />
                 <h6>Total you'll repay over the term</h6>
-                <h4>$ <span id="total-rep-amount">537,433.65</span></h4>
+                <h4>$<span id="total-rep-amount">537,433.65</span></h4>
               </div>
             </div>
           </div>

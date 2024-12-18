@@ -4,4 +4,100 @@
 
 body {
   height: 100vh;
+  background-color: hsl(202, 86%, 94%);
+ 
+}
+
+.calcs-section {
+  background-color: #fff;
+  border-radius: 20px;
+}
+.custom-radio-container {
+  display: block;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  padding: 7px;
+  margin-block: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.input-group-text {
+  border: none;
+  background: hsl(202, 86%, 94%);
+
+  color: #333;
+}
+
+.form-control {
+  border-right: none;
+  text-align: center;
+}
+
+.input-group .input-group-append .input-group-text {
+  border-left: none;
+}
+
+.clear-btn {
+  background-color: hsl(202, 55%, 16%);
+  font-size: 0.8em;
+  color: #fff;
+}
+.clear-btn:hover {
+  background-color: hsl(200, 26%, 54%);
+  color: #fff;
+}
+
+.repayments-btn {
+  border: none;
+  padding: 7px;
+  border-radius: 40px;
+  background-color: hsl(61, 70%, 52%);
+}
+.repayments-btn img {
+  width: 20px;
+}
+
+/* results section */
+
+.results {
+  background-color: hsl(202, 55%, 16%);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 20px;
+}
+
+.results p {
+    font-size: .8em;
+    margin-bottom: 1.5em;
+}
+.results-dash img {
+    width: 130px;
+}
+
+.amount-result-card {
+    background-color: hsl(202, 56%, 12%);
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.border-card {
+  border: 2px solid hsl(61, 70%, 52%);
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.card-body h6 {
+    font-size: .7em;
+    color: hsl(203, 41%, 72%);
+} 
+.card-body h2 {
+    color: hsl(61, 70%, 52%) ;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+#total-rep-amount {
+    font-size: .7em;
+    font-weight: bold;
 }
