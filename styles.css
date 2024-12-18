@@ -8,6 +8,17 @@ body {
  
 }
 
+h1 {
+    color: hsl(202, 55%, 16%);
+    font-weight: bold;
+}
+
+.input-label {
+   color: hsl(202, 12%, 43%);
+   font-size: .8em;
+   margin-block: 8px;
+    
+}
 .calcs-section {
   background-color: #fff;
   border-radius: 20px;
