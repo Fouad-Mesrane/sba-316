@@ -12,11 +12,11 @@ const interestRadio = document.getElementById("interest");
 let mortgageAmount = 0;
 let term = 0;
 let rate = 0;
-mortgageAmountEl.addEventListener("input", (e) => {
-  if (e.target.textContent !== "") {
-    errorEl.classList.add("d-none");
-  }
-});
+// mortgageAmountEl.addEventListener("input", (e) => {
+//   if (e.target.textContent !== "") {
+//     errorEl.classList.add("d-none");
+//   }
+// });
 
 function validation() {
   // validating the amount input
@@ -33,6 +33,7 @@ function validation() {
     errorMessage.textContent = ``;
     errorEl.classList.add("d-none");
     mortgageAmountEl.classList.remove("red-border");
+    mortgageAmountEl.classList.add("green-border");
   }
 
   // validating the term input
@@ -46,6 +47,7 @@ function validation() {
     errorMessage.textContent = ``;
     errorEl.classList.add("d-none");
     termEl.classList.remove("red-border");
+    termEl.classList.add("green-border");
   }
   // validating the rate input
 
@@ -58,6 +60,7 @@ function validation() {
     errorMessage.textContent = ``;
     errorEl.classList.add("d-none");
     rateEl.classList.remove("red-border");
+    rateEl.classList.add("green-border");
   }
 }
 
@@ -73,3 +76,4 @@ form.addEventListener("submit", (e) => {
 function calculateRepayments (amount, term, rate) {
 
 }
+

@@ -111,15 +111,19 @@ h1 {
   font-weight: bold;
 }
 
-
 #error {
-    border: 2px solid rgb(224, 86, 86);
-    background-color: rgb(224, 86, 86);
-    color: #fff;
-    width: 50%;
-    text-align: center;
+  border: 2px solid rgb(224, 86, 86);
+  background-color: rgb(224, 86, 86);
+  color: #fff;
+  width: 50%;
+  text-align: center;
+  border-radius: 5px;
 }
 
 .red-border {
-    border: 1px solid rgb(224, 86, 86);
+  border: 1px solid rgb(224, 86, 86);
+}
+
+.green-border {
+    border: 1px solid rgb(46, 199, 46);
 }
