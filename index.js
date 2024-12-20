@@ -1,8 +1,10 @@
 // select elements
 const form = document.getElementById("form");
 //
-const resultsContainer = document.getElementById('results-container')
+const resultsContainer = document.getElementById("results-container");
 
+// clear all button
+const cleaAll = document.getElementById("clear-btn");
 
 // error message
 const errorEl = document.querySelector("#error");
@@ -14,36 +16,31 @@ const rateEl = document.querySelector("#mortgage-rate");
 const repaymentRadio = document.getElementById("repayment");
 const interestRadio = document.getElementById("interest");
 
-
- // repayments monthly amount
-const repaymentAmountEl = document.getElementById('repayment-amount')
-const totalRepaymentAmountEl = document.getElementById('total-rep-amount')
+// repayments monthly amount
+const repaymentAmountEl = document.getElementById("repayment-amount");
+const totalRepaymentAmountEl = document.getElementById("total-rep-amount");
 
 let mortgageAmount = 0;
 let term = 0;
 let rate = 0;
 
-
-
-
-
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (validation() && repaymentRadio.checked) {
-        // calling the helper function to calculate the monthly repayments
-       const monthlyRepayment =  calculateRepayments(mortgageAmount, term,rate);
-       const totalPayments = term * 12;
-        resultsContainer.firstElementChild.classList.add('d-none')
-        resultsContainer.lastElementChild.classList.remove('d-none')
-        repaymentAmountEl.textContent = monthlyRepayment
-        totalRepaymentAmountEl.textContent =(  monthlyRepayment * totalPayments).toFixed(2)
-    }
-  
-    
-  });
+  e.preventDefault();
+  if (validation() && repaymentRadio.checked) {
+    // calling the helper function to calculate the monthly repayments
+    const monthlyRepayment = calculateRepayments(mortgageAmount, term, rate);
+    const totalPayments = term * 12;
+    resultsContainer.firstElementChild.classList.add("d-none");
+    resultsContainer.lastElementChild.classList.remove("d-none");
+    repaymentAmountEl.textContent = monthlyRepayment;
+    totalRepaymentAmountEl.textContent = (
+      monthlyRepayment * totalPayments
+    ).toFixed(2);
+  } else if (validation() && interestRadio.checked) {
+  }
+});
 
-
-  // validation function
+// validation function
 
 function validation() {
   // validating the amount input
@@ -56,7 +53,7 @@ function validation() {
     errorMessage.textContent = `Please enter a valid number and cannot be 0 or less`;
     errorEl.classList.remove("d-none");
     mortgageAmountEl.classList.add("red-border");
-    return false
+    return false;
   } else {
     errorMessage.textContent = ``;
     errorEl.classList.add("d-none");
@@ -71,7 +68,7 @@ function validation() {
     errorMessage.textContent = `Please enter a valid number and cannot be 0 or less`;
     errorEl.classList.remove("d-none");
     termEl.classList.add("red-border");
-    return false
+    return false;
   } else {
     errorMessage.textContent = ``;
     errorEl.classList.add("d-none");
@@ -85,25 +82,15 @@ function validation() {
     errorMessage.textContent = `Please enter a valid number and cannot be 0 or less`;
     errorEl.classList.remove("d-none");
     rateEl.classList.add("red-border");
-    return false
+    return false;
   } else {
     errorMessage.textContent = ``;
     errorEl.classList.add("d-none");
     rateEl.classList.remove("red-border");
     rateEl.classList.add("green-border");
   }
-  return true
+  return true;
 }
-
-
-
-
-
-
-
-
-
-
 
 // helper function
 // repayments calculation function
@@ -116,19 +103,49 @@ function calculateRepayments(amount, term, rate) {
   const totalPayments = term * 12;
 
   //
- 
-  const monthlyPayment = (amount * monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) /
-  (Math.pow(1 + monthlyRate, totalPayments) - 1);
-    return monthlyPayment.toFixed(2)
+
+  const monthlyPayment =
+    (amount * monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) /
+    (Math.pow(1 + monthlyRate, totalPayments) - 1);
+  return monthlyPayment.toFixed(2);
 }
 
 // function to calculate interests
 
-function calculateInterests (amount, term, interest) {
-      //  monthly rate based on yearly
+function calculateInterests(amount, term, interest) {
+  //  monthly rate based on yearly
   const monthlyRate = rate / 100 / 12;
 
-  const interestPayment = amount * monthlyRate; 
+  const interestPayment = amount * monthlyRate;
 
   return interestPayment.toFixed(2);
 }
+
+// clear all button function
+
+cleaAll.addEventListener("click", (e) => {
+  mortgageAmountEl.value = "";
+  termEl.value = "";
+  rateEl.value = "";
+
+  if (!repaymentRadio.checked) {
+    repaymentRadio.checked = true;
+  }
+
+  if (!errorEl.classList.contains("d-none")) {
+    errorMessage.textContent = ``;
+    errorEl.classList.add("d-none");
+  }
+
+  if (resultsContainer.firstElementChild.classList.contains("d-none")) {
+    resultsContainer.firstElementChild.classList.remove("d-none");
+    resultsContainer.lastElementChild.classList.add("d-none");
+  }
+
+  termEl.classList.remove("red-border");
+  termEl.classList.remove("green-border");
+  mortgageAmountEl.classList.remove("red-border");
+  mortgageAmountEl.classList.remove("green-border");
+  rateEl.classList.remove("red-border");
+  rateEl.classList.remove("green-border");
+});
