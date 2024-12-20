@@ -3,13 +3,25 @@
 }
 
 body {
-  height: 100vh;
+  
   background-color: hsl(202, 86%, 94%);
 }
 
 h1 {
   color: hsl(202, 55%, 16%);
   font-weight: bold;
+}
+header {
+  background-color: hsl(202, 55%, 16%);
+  height: 50px;
+ 
+}
+
+#navbar {
+  margin-top: auto;
+}
+.container {
+height: 100vh;
 }
 
 .input-label {
@@ -115,7 +127,7 @@ h1 {
   border: 2px solid rgb(224, 86, 86);
   background-color: rgb(224, 86, 86);
   color: #fff;
-  width: 50%;
+ 
   text-align: center;
   border-radius: 5px;
 }

@@ -1,3 +1,10 @@
+let links = [
+  {href : "#", text : 'Home'},
+  {href : "#", text : 'About'},
+  {href : "#", text : 'Contact'},
+]
+
+
 // select elements
 const form = document.getElementById("form");
 //
@@ -19,6 +26,21 @@ const interestRadio = document.getElementById("interest");
 // repayments monthly amount
 const repaymentAmountEl = document.getElementById("repayment-amount");
 const totalRepaymentAmountEl = document.getElementById("total-rep-amount");
+
+// 
+const navLinks = document.querySelectorAll('#navbar-list li')
+
+//  adding links to the navbar
+navLinks.forEach((link, index) => {
+  const a = document.createElement('a')
+  a.href = links[index].href
+  a.text = links[index].text
+  a.style.textDecoration = 'none'
+  a.style.color = 'white'
+  link.style.listStyleType = 'none'
+  link.appendChild(a)
+
+})
 
 let mortgageAmount = 0;
 let term = 0;
@@ -156,3 +178,4 @@ cleaAll.addEventListener("click", (e) => {
     return;
   }
 });
+
