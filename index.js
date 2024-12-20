@@ -124,28 +124,35 @@ function calculateInterests(amount, term, interest) {
 // clear all button function
 
 cleaAll.addEventListener("click", (e) => {
-  mortgageAmountEl.value = "";
-  termEl.value = "";
-  rateEl.value = "";
+  const isSure = confirm("Are you sure you want to proceed?");
 
-  if (!repaymentRadio.checked) {
-    repaymentRadio.checked = true;
+  // Check the user's response
+  if (isSure) {
+    mortgageAmountEl.value = "";
+    termEl.value = "";
+    rateEl.value = "";
+
+    if (!repaymentRadio.checked) {
+      repaymentRadio.checked = true;
+    }
+
+    if (!errorEl.classList.contains("d-none")) {
+      errorMessage.textContent = ``;
+      errorEl.classList.add("d-none");
+    }
+
+    if (resultsContainer.firstElementChild.classList.contains("d-none")) {
+      resultsContainer.firstElementChild.classList.remove("d-none");
+      resultsContainer.lastElementChild.classList.add("d-none");
+    }
+
+    termEl.classList.remove("red-border");
+    termEl.classList.remove("green-border");
+    mortgageAmountEl.classList.remove("red-border");
+    mortgageAmountEl.classList.remove("green-border");
+    rateEl.classList.remove("red-border");
+    rateEl.classList.remove("green-border");
+  } else {
+    return;
   }
-
-  if (!errorEl.classList.contains("d-none")) {
-    errorMessage.textContent = ``;
-    errorEl.classList.add("d-none");
-  }
-
-  if (resultsContainer.firstElementChild.classList.contains("d-none")) {
-    resultsContainer.firstElementChild.classList.remove("d-none");
-    resultsContainer.lastElementChild.classList.add("d-none");
-  }
-
-  termEl.classList.remove("red-border");
-  termEl.classList.remove("green-border");
-  mortgageAmountEl.classList.remove("red-border");
-  mortgageAmountEl.classList.remove("green-border");
-  rateEl.classList.remove("red-border");
-  rateEl.classList.remove("green-border");
 });
